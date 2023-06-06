@@ -1,0 +1,712 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4/06/2021, 02:13:53 PM
+    Author     : pcgc7
+*/
+
+/******************** Estilos generales de la página **************************/
+
+* {
+    box-sizing: border-box;    
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+:root {
+    --colorAzul: #003958;
+    --colorDorado: #b59a47;
+    --colorBlanco: #fff;
+    --colorWhitesmoke: #f5f5f5;
+    --colorAlabaster: #f2f0e6;
+    --colorSilver: #ccc;
+    --colorOscuro: #333;
+}
+::-webkit-scrollbar {display: none;}
+
+/******************** Estilos contenedor de la página *************************/
+
+.contenedor {
+    display: grid;
+    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(13, 10.5em);
+    
+    grid-template-areas:
+    "encabezado encabezado encabezado encabezado encabezado encabezado"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"    
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"
+    "contenido  contenido  contenido  contenido  contenido  contenido"    
+    "piepagina  piepagina  piepagina  piepagina  piepagina  piepagina"
+    "piepagina  piepagina  piepagina  piepagina  piepagina  piepagina";
+}
+
+/******************** Estilos encabezado de la página *************************/
+
+.contenedor .encabezado {
+    grid-area: encabezado;
+                    
+    width: 100%;    
+    z-index: 80; 
+    background: linear-gradient(to right, #f5f5f5 0%, #b59a47 100%);        
+    box-shadow: 0 0.75em 0.75em 0 rgba(0,0,0,0.5);           
+}
+.contenedor .encabezado .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contenedor .encabezado .logo img {
+    width: 15.75%;
+    margin: 2.25em 1.25em;
+}
+
+/******************** Estilos contenidos de la página *************************/
+
+.contenedor .contenido {
+    grid-area: contenido;
+
+    display: grid;    
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 10.5em);
+                
+    grid-template-areas:    
+    "opciones   opciones   opciones   opciones   opciones   opciones"
+    "opciones   opciones   opciones   opciones   opciones   opciones"
+    "opciones   opciones   opciones   opciones   opciones   opciones"
+    "opciones   opciones   opciones   opciones   opciones   opciones"
+    "opciones   opciones   opciones   opciones   opciones   opciones"        
+    "imagenes   imagenes   imagenes   imagenes   imagenes   imagenes"
+    "imagenes   imagenes   imagenes   imagenes   imagenes   imagenes"
+    "imagenes   imagenes   imagenes   imagenes   imagenes   imagenes"  
+    "imagenes   imagenes   imagenes   imagenes   imagenes   imagenes"
+    "imagenes   imagenes   imagenes   imagenes   imagenes   imagenes";
+}
+
+/******************** Estilos imagen de fondo *********************************/
+
+.contenedor .contenido .imagenFondo {
+    grid-area: opciones;
+            
+    display: flex;    
+    align-items: center; 
+    
+    background-image: url('../imagenes/fondoIglesia.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 70;
+    box-shadow: 0 0.75em 0.75em 0 rgba(0,0,0,0.7);
+}
+
+/******************** Estilos de opciones del menú ****************************/
+
+.contenedor .contenido .fondoMenu {
+    display: flex;
+    flex-direction: column;    
+    
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);                
+}
+.contenedor .contenido .marcoTitulo {     
+    margin: 3.5em 0;
+}
+.contenedor .contenido .titulo {          
+    font-weight: 700;
+    z-index: 60;
+    text-transform: uppercase;
+    margin: 0;
+}
+/* Recuadro que envuelve el texto del título */
+.titulo span {
+    position: relative;
+    z-index: 50;
+    padding: 0.5em 3em;
+    background-color: var(--colorAzul);
+    color: var(--colorDorado);    
+    border-radius: 0.3125em;        
+}
+/* Línea creada que acompaña el texto del título */
+.titulo::after {
+    content: "";
+    display: inline-block;
+    height: 0.125em;
+    width: 90%;
+    background: var(--colorAzul);
+    position: relative;
+    top: -1.5em;
+    z-index: 40;
+}
+.contenedor .contenido .menu {
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4em;
+}
+.contenedor .contenido .menu .item {            
+    height: 100%;
+    width: 15%;
+    padding-top: 1.5em;                                       
+    text-align: center;
+    text-decoration: none;    
+    color: var(--colorAzul);
+    box-shadow: 0 0.625em 0.625em rgba(0, 0, 0, 0.6);       
+    border: 0.15em solid var(--colorDorado);                
+    border-radius: 0.625em;                                 
+    transition: all ease .3s;
+}
+.contenedor .contenido .menu .item:hover {    
+    border: 0.15em solid var(--colorAzul);
+    background: var(--colorAlabaster);
+    border-radius: 0.625em;
+    cursor: pointer;
+}
+.contenedor .contenido .menu .opcion {
+    font-size: 3.5em;
+}
+
+/******************** Estilos galería de imágenes *****************************/
+
+.contenedor .contenido .carrusel {
+    grid-area: imagenes;
+                
+    background-image: url('../imagenes/imgMuro_5.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;                  
+}
+.contenedor .carrusel .contenedor-imagenes {               
+    max-width: 85em;
+    height: auto;
+    margin: 0 auto;
+    padding: 5em 0;    
+}
+.contenedor .carrusel .contenedor-imagenes .items {
+    width: 22em;
+    height: 22em;
+    margin: 4.375em 3.25em;     
+    position: relative;
+}
+.contenedor .carrusel .contenedor-imagenes .items .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22em;
+    height: 22em;    
+    border-radius: 0.5em;    
+    background: rgba(0, 0, 0, 0.5);
+}
+.contenedor .carrusel .contenedor-imagenes .slick-center .overlay {
+    opacity: 0;    
+}
+.contenedor .carrusel .contenedor-imagenes .items img {
+    width: 22em;
+    height: 22em;
+    border: 0.5em double var(--colorAzul);
+    border-radius: 0.5em;
+    padding: 0.5em;
+    transition: all linear .4s;
+}
+.contenedor .carrusel .contenedor-imagenes .slick-center img {
+    transform: scale(1.2);
+}
+
+/******************** Estilos flechas siguiente y anterior ********************/
+
+.contenedor-imagenes .flecha-previo,
+.contenedor-imagenes .flecha-siguiente {
+    position: absolute;
+    top: 39%;
+    z-index: 30;
+    color: var(--colorAzul);
+    width: 1.5em;
+    font-size: 5em;
+    text-align: center;
+}
+/* La flecha izquierda se ubica fuera de las imagenes */
+.contenedor-imagenes .flecha-previo {    
+    left: -10%;
+}
+/* La flecha derecha se ubica fuera de las imagenes */
+.contenedor-imagenes .flecha-siguiente {    
+    right: -10%;    
+}
+.contenedor-imagenes .flecha-previo:hover,
+.contenedor-imagenes .flecha-siguiente:hover {
+    cursor: pointer;
+    color: var(--colorDorado);
+}
+
+/******************** Estilos botones indicadores  ****************************/
+
+.contenedor-imagenes .slick-dots {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    z-index: 30;
+    text-align: center;
+    margin: 0 auto;
+}
+.contenedor-imagenes ul.slick-dots {
+    padding: 0;    
+}
+.contenedor-imagenes .slick-dots li {
+    list-style: none;
+    width: 1em;
+    height: 1em;
+    background: var(--colorOscuro);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.35em;
+}
+.contenedor-imagenes .slick-dots li.slick-active {
+    background: var(--colorDorado);
+}
+.contenedor-imagenes .slick-dots li button {
+    display: none;
+}
+
+/******************** Estilos para el efecto de onda **************************/
+
+.contenedor .contenido .wave {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    
+    height: 30%;
+    position: relative;
+    top: -10.75em;
+    z-index: 20;    
+}
+
+/******************** Estilos para el pie de la página ************************/
+
+.contenedor .contenedorPiepagina {
+    grid-area: piepagina;
+    
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;    
+    align-items: center;
+    flex-wrap: wrap;
+    
+    background: var(--colorAzul);
+}
+.columna-logo, .columna-menu,
+.columna-redes, .columna-contacto {
+    width: 23%;
+    height: auto;        
+}
+.columna-menu h2, .columna-redes h2, .columna-contacto h2 {
+    margin: 1em 0;    
+    font-weight: 600;
+    color: var(--colorDorado);
+}
+.columna-menu a, .columna-menu ul, .columna-redes .redes label,
+.columna-redes .redes .icono, .columna-contacto .datos, 
+.columna-contacto .datos a {
+    color: var(--colorBlanco);
+}
+.columna-redes .redes, .columna-contacto .datos {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;    
+}
+.columna-redes .redes .icono, .columna-contacto .datos .icono {
+    width: 1.25em;                                          
+    font-size: 2em;                                         
+    text-align: center;
+}
+.columna-redes .redes label, .columna-contacto .datos label,
+.columna-contacto .datos a {
+    margin-left: 1em;                                       
+}
+.columna-menu a, .columna-redes .redes a, .columna-contacto .datos a {    
+    text-decoration: none;    
+}
+.columna-menu a:hover, .columna-redes .redes a label:hover,
+.columna-contacto .datos a:hover {
+    color: var(--colorDorado); 
+}
+.columna-redes .redes, .columna-contacto .datos {    
+    line-height: 3.5em;  
+}
+.columna-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.columna-logo img {
+    width: 68%;
+}
+.columna-menu ul {
+    padding: 0;
+    margin: 0 1.25em; 
+    line-height: 2.65em;  
+}
+.contenedorInformacion {
+    width: 100%;
+    height: 18%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--colorAzul);
+    border-top: 0.0625em solid var(--colorDorado);         
+}
+.barraInfo {
+    color: var(--colorDorado);
+}
+
+/******************** Estilos sección loader **********************************/
+
+/*.contenedorLoader {
+    background: var(--colorAlabaster);
+    position: fixed;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100; 
+    transition: all 1.5s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}*/
+
+/********************** Estilos para dispositivos móviles *********************/
+
+/* Dispositivos con orientación horizontal con una resolución de pantalla máxima de 1280px */
+@media screen and (max-width: 1280px) {
+    .contenedor  {
+        grid-template-rows: repeat(13, 8em);
+    }
+    .contenedor .contenido {
+        grid-template-rows: repeat(10, 8em);
+    }
+    .contenedor .encabezado .logo img {
+        width: 18.75%;
+        margin: 1.75em 1em;
+    }
+    .contenedor .contenido .marcoTitulo {
+        margin: 2.5em 0;
+    }
+    .contenedor .contenido .titulo, .tituloItem {
+        font-size: 1.2em;
+    }
+    .contenedor .contenido .menu {
+        margin-top: 3em;
+    }
+    .contenedor .contenido .menu .opcion {
+        font-size: 3em;
+    }
+    .titulo::after {
+        top: -1.5em;
+    }
+    .contenedor .carrusel .contenedor-imagenes {            
+        max-width: 65em; 
+        padding: 4em 0;            
+    }    
+    .contenedor-imagenes .flecha-previo,
+    .contenedor-imagenes .flecha-siguiente {        
+        font-size: 4em;        
+    }
+    .contenedor-imagenes .slick-dots {        
+        width: 20%;
+        bottom: 1em;
+    }
+    .contenedor .carrusel .contenedor-imagenes .items {        
+        margin: 4.5em 2.25em;             
+    }    
+    .contenedor .carrusel .contenedor-imagenes .items img {        
+        padding: 0.25em;        
+    }
+    .contenedor .carrusel .contenedor-imagenes .items,
+    .contenedor .carrusel .contenedor-imagenes .items img, 
+    .contenedor .carrusel .contenedor-imagenes .items .overlay {
+        width: 17em;
+        height: 17em;        
+    } 
+    .contenedor .contenido .wave {                 
+        top: -7.15em;        
+    }
+    .contenedor .contenedorPiepagina {
+       justify-content: space-around; 
+    }
+    .columna-menu h2, .columna-redes h2, .columna-contacto h2 {                
+        font-size: 1.2em;
+    }    
+    .columna-menu ul, .columna-redes .redes a,
+    .columna-contacto .datos label, .columna-contacto .datos a,
+    .contenedorInformacion {
+        font-size: 0.85em;        
+    }
+    .columna-redes .redes label, .columna-contacto .datos label,
+    .columna-contacto .datos a {
+        margin-left: 0.75em;                                       
+    }
+    .columna-menu ul {
+        padding-left: 0.25em;        
+    }
+    .columna-redes .redes, .columna-contacto .datos {
+        line-height: 3em;
+    }
+    .columna-redes .redes .icono, .columna-contacto .datos .icono {
+        font-size: 1.5em;
+    }
+}
+
+/* Dispositivos con orientación horizontal con una resolución de pantalla máxima de 1024px */
+@media screen and (max-width: 1024px) {
+    .contenedor  {
+        grid-template-rows: repeat(13, 7em);
+    }
+    .contenedor .contenido {
+        grid-template-rows: repeat(10, 7em);
+    }
+    .contenedor .encabezado .logo img {
+        width: 21.75%;
+        margin: 1.5em 1em;
+    }    
+    .contenedor .contenido .imagenFondo {        
+        background-size: 100% 100%;        
+    }
+    .contenedor .contenido .marcoTitulo {
+        margin: 2em 0;
+    }
+    .contenedor .contenido .menu {
+        margin-top: 1.75em;
+    }        
+    .contenedor .contenido .menu .opcion {
+        font-size: 2.5em;
+    }    
+    .tituloItem {
+        font-size: 1em;
+    }
+    .contenedor .carrusel .contenedor-imagenes {            
+        max-width: 55em;
+        padding: 2em 0;
+    }    
+    .contenedor-imagenes .flecha-previo,
+    .contenedor-imagenes .flecha-siguiente {        
+        font-size: 3em;        
+    }    
+    .contenedor-imagenes .slick-dots {
+        bottom: 1.5em;        
+    }
+    .contenedor .carrusel .contenedor-imagenes .items {        
+        margin: 4.5em 1.65em;             
+    }  
+    .contenedor .carrusel .contenedor-imagenes .items,
+    .contenedor .carrusel .contenedor-imagenes .items img, 
+    .contenedor .carrusel .contenedor-imagenes .items .overlay {
+        width: 15em;
+        height: 16em;        
+    }    
+    .contenedor-imagenes .flecha-previo {    
+        left: -7%;
+    }    
+    .contenedor-imagenes .flecha-siguiente {    
+        right: -7%;    
+    }
+    .contenedor .contenido .wave {        
+        top: -5.75em;        
+    }
+    .columna-menu h2, .columna-redes h2, .columna-contacto h2 {                
+        font-size: 0.9em;
+    }
+    .columna-menu ul, .columna-redes .redes a,
+    .columna-contacto .datos label, .columna-contacto .datos a,
+    .contenedorInformacion {
+        font-size: 0.6em;        
+    } 
+    .columna-menu ul {
+        line-height: 3em;
+    }
+    .columna-redes .redes, .columna-contacto .datos {
+        line-height: 2.45em;
+    }
+    .columna-redes .redes .icono, .columna-contacto .datos .icono {
+        font-size: 1.25em;
+    }  
+}
+
+/* Dispositivos con orientación horizontal con una resolución de pantalla máxima de 800px */
+@media screen and (max-width: 768px) {    
+    .contenedor  {
+        grid-template-rows: repeat(13, 5.5em);
+    }
+    .contenedor .contenido {
+        grid-template-rows: repeat(10, 5.5em);
+    }
+    .contenedor .encabezado .logo img { 
+        width: 24.75%;
+        margin: 1em;
+    }
+    .contenedor .contenido .marcoTitulo {
+        margin: 0.75em 0;
+    }
+    .titulo::after {
+        width: 95%;       
+    }          
+    .contenedor .contenido .titulo, .tituloItem {
+        font-size: 0.85em;
+        margin: 1em 0;
+    }
+    .contenedor .contenido .menu {                    
+        margin-top: 1.25em;        
+    } 
+    .contenedor .contenido .menu .item {                    
+        width: 20%;
+        padding-top: 1.25em;        
+    }  
+    .contenedor .contenido .menu .opcion {
+        font-size: 2em;
+    }                
+    .contenedor .carrusel .contenedor-imagenes {            
+        max-width: 40em;                      
+    }
+    .contenedor .carrusel .contenedor-imagenes .items img {        
+        border: 0.25em double var(--colorAzul);
+        border-radius: 0.5em;
+        padding: 0.25em;        
+    }        
+    .contenedor .carrusel .contenedor-imagenes .items {        
+        margin: 4em 0.9em;             
+    }  
+    .contenedor .carrusel .contenedor-imagenes .items,
+    .contenedor .carrusel .contenedor-imagenes .items img, 
+    .contenedor .carrusel .contenedor-imagenes .items .overlay {
+        width: 11.5em;
+        height: 12em;        
+    }
+    .contenedor-imagenes .flecha-previo,
+    .contenedor-imagenes .flecha-siguiente {  
+        top: 41%;
+        font-size: 2em;        
+    }    
+    .contenedor-imagenes .slick-dots {
+        width: 25%;
+        bottom: 2em;        
+    }
+    .contenedor-imagenes .slick-dots li {        
+        width: 0.7em;
+        height: 0.7em;        
+    }
+    .contenedor .contenido .wave {        
+        top: -4.25em;        
+    }
+    .columna-menu h2, .columna-redes h2, .columna-contacto h2 {                
+        font-size: 0.65em;
+    }
+    .columna-redes .redes label, .columna-contacto .datos label,
+    .columna-contacto .datos a {
+        margin-left: 0.5em;                                       
+    }
+    .columna-menu ul {
+        padding-left: 0.5em; 
+        line-height: 2.75em;
+    }
+    .columna-menu ul, .columna-redes .redes a,
+    .columna-contacto .datos label, .columna-contacto .datos a,
+    .contenedorInformacion {
+        font-size: 0.45em;        
+    }
+    .columna-redes .redes, .columna-contacto .datos {
+        line-height: 1.6em;
+    }
+    .columna-redes .redes .icono, .columna-contacto .datos .icono {
+        font-size: 1em;
+    } 
+}
+
+/* Dispositivos con orientación horizontal con una resolución de pantalla máxima de 600px */
+@media screen and (max-width: 576px) {    
+    .contenedor  {
+        grid-template-rows: repeat(13, 4em);
+    }
+    .contenedor .contenido {
+        grid-template-rows: repeat(10, 4em);
+    }
+    .contenedor .encabezado .logo img {
+        width: 24.75%;
+        margin: 0.75em;
+    }
+    .contenedor .contenido .marcoTitulo {
+        margin: 0.5em 0;
+    }
+    .titulo::after {        
+        top: -1.45em;        
+    } 
+    .contenedor .contenido .titulo, .tituloItem {
+        font-size: 0.70em;
+        margin: 1em 0;        
+    }
+    .contenedor .contenido .menu {                    
+        margin-top: 0.35em;        
+    } 
+    .contenedor .contenido .menu .item {                    
+        width: 20%;
+        padding-top: 0.85em;        
+    }  
+    .contenedor .contenido .menu .opcion {
+        font-size: 1.5em;
+    } 
+    .contenedor .carrusel .contenedor-imagenes {            
+        max-width: 30em;
+        padding: 1em 0;
+    }    
+    .contenedor .carrusel .contenedor-imagenes .items {        
+        margin: 3.5em 0.75em;             
+    }
+    .contenedor .carrusel .contenedor-imagenes .items,
+    .contenedor .carrusel .contenedor-imagenes .items img, 
+    .contenedor .carrusel .contenedor-imagenes .items .overlay {
+        width: 8.5em;
+        height: 8.5em;        
+    }     
+    .contenedor-imagenes .flecha-previo,
+    .contenedor-imagenes .flecha-siguiente {          
+        font-size: 1.5em;        
+    }      
+    .contenedor-imagenes .slick-dots {        
+        bottom: 2em;        
+    }
+    .contenedor-imagenes .slick-dots li {        
+        width: 0.5em;
+        height: 0.5em;        
+    }
+    .contenedor .contenido .wave {        
+        top: -3.15em;        
+    }
+    
+    .columna-logo, .columna-logo img {
+        display: none;
+    }        
+    .columna-menu, .columna-redes, .columna-contacto {
+        width: 30%;
+        padding-left: 0.5em;
+    }            
+    
+    .columna-menu ul {
+        padding-left: 1em;         
+    }
+    .contenedorInformacion {
+        margin-top: 1em;
+    }
+}
