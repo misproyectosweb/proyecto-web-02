@@ -9,9 +9,9 @@ Este sitio web fue creado con:
 
 Este sitio web fue creado y desarrollado usando la plataforma **NetBeans 12.0.** Además está adaptado para ejecutarse en dispositivos móviles.
 
-El archivo **index.php** es el que contiene la página de inicio o página principal del sitio web, cuyo diseño varía en la mayoría de elementos contenidos en relación con el proyecto llamado **“ProyectoWeb_iglesia_01”**
+El archivo **index.php** es el que contiene la página de inicio o página principal del sitio web, cuyo diseño varía en la mayoría de elementos contenidos en relación con el proyecto llamado **“proyecto-web-01”**
 
-La página de inicio o principal consta de varias secciones: 
+La página de inicio o principal consta de tres secciones: 
 - **Un encabezado:**	donde se muestra el logotipo de la organización
 - **Una sección principal:**	integra los contenidos más relevantes de presentación de la organización 
 - **Un pie de página:** 	muestra la información de contacto de la organización
