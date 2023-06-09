@@ -2,10 +2,10 @@
 Sitio web que muestra información variada de una iglesia
 
 Sitio web creado con:
-** - HTML:**	Permite crear la estructura del sitio web mediante etiquetas
-** - CSS:**	Para definir y crear la presentación o estética del sitio web
-** - JavaScript:**	Añade características que permite agregar e implementar acciones interactivas al sitio web**
-** - PHP:**	Favorece la conexión entre los servidores y la interfaz de usuario
+- **HTML:**	Permite crear la estructura del sitio web mediante etiquetas
+- **CSS:**	Para definir y crear la presentación o estética del sitio web
+- **JavaScript:**	Añade características que permite agregar e implementar acciones interactivas al sitio web**
+- **PHP:**	Favorece la conexión entre los servidores y la interfaz de usuario
 
 Este sitio web fue creado y desarrollado usando la plataforma **NetBeans 12.0.** Además está adaptado para ejecutarse en dispositivos móviles.
 
